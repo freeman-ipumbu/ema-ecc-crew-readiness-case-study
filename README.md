@@ -38,7 +38,7 @@ The scheduling, inventory and reporting functions take recorded inputs and produ
 
 ## Verification
 
-The release verification included **31 passing automated tests** and local preview checks of dashboard sign-in and team administration. The suite exercised Windhoek week boundaries, daily and weekly cadence, crew-specific quantities, zero stock, missed answers, issue creation, role restrictions, report totals, mileage validation and spreadsheet-safe export. The weekly report keeps its figures as they stood when submitted.
+The release verification included **32 passing automated tests** and browser checks of dashboard sign-in, enrollment and team administration. The suite exercised Windhoek week boundaries, daily and weekly cadence, crew-specific quantities, zero stock, missed answers, issue creation, role restrictions, report totals, mileage validation, spreadsheet-safe export and the offline fallback. The weekly report keeps its figures as they stood when submitted.
 
 The deployed dashboard is hosted on Cloudflare Pages. The screenshot shows the sample workspace with fictional units and figures.
 
