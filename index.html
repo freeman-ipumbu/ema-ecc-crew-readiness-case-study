@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-NA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How EMA ECC Crew Readiness connects shift checks, follow-up actions and Monday reporting. A case study by SolarSpin Technologies.">
+  <meta name="theme-color" content="#12382f">
+  <title>EMA ECC Crew Readiness | SolarSpin Technologies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="wordmark" href="https://www.solarspin-namibia.xyz/">SolarSpin <span>Technologies</span></a>
+      <nav aria-label="Case study">
+        <a href="#workflow">Workflow</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Field operations case study</p>
+          <h1 id="title">EMA ECC<br>Crew Readiness</h1>
+          <p class="lede">A single workspace for shift checks, follow-ups and the Monday report.</p>
+          <a class="button" href="https://ema-cr.pages.dev/">Open the dashboard</a>
+        </div>
+        <figure class="product-figure">
+          <div class="product" role="group" aria-labelledby="sample-title">
+            <div class="product-header">
+              <p id="sample-title">Today’s readiness</p>
+              <span class="sample-label">Fictional sample</span>
+            </div>
+            <div class="product-body">
+              <div class="product-metrics" role="group" aria-label="Sample readiness metrics">
+                <div><span>Due checks</span><strong>2</strong></div>
+                <div><span>Completed</span><strong>4</strong></div>
+                <div><span>Follow-ups</span><strong>1</strong></div>
+              </div>
+              <p class="queue-title">Check queue</p>
+              <ul class="queue">
+                <li><div><strong>Equipment check</strong><span>Training Unit A</span></div><span class="status due">Due</span></li>
+                <li><div><strong>Vehicle check</strong><span>Training Unit B</span></div><span class="status due">Due</span></li>
+              </ul>
+              <div class="report-strip"><strong>Monday report</strong><span class="status draft">Draft</span></div>
+            </div>
+          </div>
+          <figcaption>Illustration of the crew’s starting view with fictional records.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <p class="eyebrow">The shift workflow</p>
+        <h2 id="workflow-title">From first check to Monday sign-off</h2>
+        <p>The brief called for regular medication, ambulance equipment and vehicle checks, followed by a report every Monday.</p>
+      </div>
+      <ol class="flow">
+        <li><h3>See what is due</h3><p>Check queues use the active fleet and the intervals set by the supervisor.</p></li>
+        <li><h3>Complete the check</h3><p>Record counts, equipment condition and mileage. Jump to an unanswered item and add explanations where needed.</p></li>
+        <li><h3>Follow up a finding</h3><p>Stock differences and faults on a signed check create findings. The supervisor can assign a due date and record the resolution.</p></li>
+        <li><h3>Review the week</h3><p>Reports use saved checks and mileage. Supervisors add context and submit a dated snapshot with print and CSV exports.</p></li>
+      </ol>
+      <figure class="dashboard-preview">
+        <img src="assets/dashboard-sample.jpg" width="1280" height="800" alt="The sample workspace shows today’s readiness, due checks, open follow-ups and the Monday report status." loading="lazy">
+        <figcaption>The dashboard’s Today view with fictional sample records.</figcaption>
+      </figure>
+    </section>
+
+    <section class="practice" aria-labelledby="practice-title">
+      <div class="container practice-grid">
+        <div class="section-heading">
+          <p class="eyebrow">In practice</p>
+          <h2 id="practice-title">Built for the next shift</h2>
+          <p>Crews can start on a phone at the vehicle and use the same interface at a desk.</p>
+        </div>
+        <dl>
+          <div><dt>Checklists by unit</dt><dd>Unit type and crew level determine the expected equipment and quantities. Zero stock and not-applicable answers are recorded distinctly.</dd></div>
+          <div><dt>Drafts during a weak connection</dt><dd>The browser keeps an in-progress draft within the current tab’s session. Staff submit the signed record after reconnecting.</dd></div>
+          <div><dt>Guided onboarding</dt><dd>The Help view includes screenshots, a fictional sample workspace and installation instructions for supported devices.</dd></div>
+          <div><dt>Team access</dt><dd>Staff sign in through the dashboard. Supervisors can create invitation links and manage workspace access.</dd></div>
+          <div><dt>Predictable Monday deadlines</dt><dd>Windhoek time defines the reporting week and cutoff. A downloadable calendar event can remind staff to review the report.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="container architecture" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <p class="eyebrow">Implementation and verification</p>
+        <h2 id="architecture-title">A repeatable path to the shared record</h2>
+        <p>Checklist scheduling, inventory and reporting use rules that can be tested separately. The server evaluates role permissions and checks that crew findings match the signed checklist.</p>
+      </div>
+      <ol class="layers" aria-label="Architecture layers">
+        <li><span>Interface</span><strong>React and Vinext</strong><p>Responsive views and browser-held drafts</p></li>
+        <li><span>Workspace API</span><strong>Validation and roles</strong><p>Membership, write permissions and revision checks</p></li>
+        <li><span>Stored records</span><strong>Cloudflare D1</strong><p>Checks, follow-ups and submitted report snapshots</p></li>
+      </ol>
+      <aside class="evidence" aria-label="Test evidence">
+        <strong>31 automated tests passed</strong>
+        <p>Release verification covered checklist and reporting rules. Local preview checks exercised dashboard sign-in and team administration. The dashboard is hosted on Cloudflare Pages.</p>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-bar">
+      <p>A Digital Experience By <a href="https://www.solarspin-namibia.xyz/">SolarSpin Technologies</a></p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
